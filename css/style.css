@@ -1,0 +1,593 @@
+:root {
+  --primary: #b08d57; /* Emas untuk kesan mewah */
+  --secondary: #2c3e50; /* Hitam kebiruan untuk tampilan elegan */
+  --bg: rgb(29, 31, 39); /* Latar belakang gelap untuk kesan premium */
+  --hover-color: #f5f5f5; /* Warna putih elegan saat hover */
+  --accent: #ecf0f1; /* Perak atau putih keabu-abuan untuk aksen */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--accent);
+  min-height: 2000px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 7%;
+  background-color: var(--secondary); /* Hitam kebiruan */
+  border-bottom: 3px solid var(--primary); /* Emas sebagai aksen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  font-style: italic;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-logo span {
+  color: var(--accent); /* Warna perak pada span */
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .navbar-logo:hover {
+  color: #222831;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.navbar .navbar-logo span:hover {
+  color: #f39c12;
+  transition: color 0.5s ease;
+}
+
+.navbar .navbar-nav a {
+  color: var(--accent);
+  margin: 0 0.5rem;
+  display: inline-block;
+}
+
+.navbar .navbar-nav .home {
+  transform: scale(1.05);
+  font-weight: 1000;
+}
+
+.navbar .navbar-nav .navProduct {
+  transform: scale(1.05);
+  font-weight: 1000;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--hover-color); /* Putih cerah saat hover */
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  padding-bottom: 0.5rem;
+  display: block;
+  border-bottom: 0.1rem solid var(--hover-color); /* Garis bawah saat hover */
+  transform: scale(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scale(0.7);
+  transition: 0.3s linear;
+  border-bottom-color: #ecf0f1; /* Putih atau perak untuk efek hover */
+}
+
+.navbar .navbar-extra a {
+  color: var(--accent); /* Perak untuk teks navbar tambahan */
+  margin: 0 0.5rem;
+  display: inline-block;
+  align-items: center;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--hover-color); /* Putih cerah saat hover */
+  transform: scale(1.1);
+}
+
+#hamburger-menu {
+  display: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease; /* Menambahkan transisi */
+}
+
+#hamburger-menu:hover {
+  color: var(--hover-color); /* Ganti warna saat hover */
+  transform: scale(1.2); /* Sedikit perbesar saat hover */
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  background-image: linear-gradient(
+      rgba(29, 31, 39, 0.5),
+      rgba(29, 31, 39, 0.5)
+    ),
+    url("../img/parfum2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 160px;
+  align-items: center;
+  z-index: 1;
+  padding: 40px;
+  color: #ecf0f1;
+  position: relative;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  padding-bottom: 5rem;
+}
+
+/* .hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(29, 31, 39, 1) 3%,
+    rgba(255, 255, 255, 0) 25%
+  );
+} */
+
+.hero .banner .banner-item h2 {
+  margin: 0.5 rem;
+  font-size: 2.5rem;
+}
+
+.hero .banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Supaya layout responsif */
+  margin-top: 2rem;
+}
+
+.hero .banner .banner-item {
+  text-align: center;
+  flex: 1;
+  max-width: 1000px;
+}
+
+.hero .banner .banner-item .banner-link {
+  display: block; /* Membuat link dapat menampung seluruh gambar */
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+}
+
+.hero .banner .banner-item .banner-link img {
+  margin: 1.5rem;
+  width: 50%;
+  height: auto;
+  transition: transform 0.3s ease;
+  z-index: 0;
+  position: relative;
+}
+
+.hero .banner .banner-item a:hover img {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.hero .banner .banner-item:first-child {
+  margin-right: 0;
+}
+
+.hero .banner .banner-item:last-child {
+  margin-left: 0;
+}
+
+/* best sellers */
+
+.best-sellers {
+  background-color: #2c3e50;
+  padding: 3rem;
+  height: auto;
+  color: #ecf0f1;
+  text-align: center; /* Center align text */
+}
+
+.best-sellers h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary); /* You can change this to match your color scheme */
+}
+
+.perfume-list {
+  display: inline-flex;
+  justify-content: space-around; /* Space items evenly */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem; /* Add spacing between perfume items */
+}
+
+.perfume-item {
+  background-color: #34495e; /* Lighter background for perfume items */
+  padding: 1rem;
+  border-radius: 10px;
+  width: 30%; /* Each item takes up 30% of the container width */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.perfume-item img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px; /* Optional: Round image corners */
+}
+
+.perfume-item h3 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  color: #f39c12; /* Accent color */
+}
+
+.perfume-item p {
+  font-size: 1rem;
+  color: #ecf0f1;
+  margin-top: 0.5rem;
+}
+
+.perfume-item a {
+  margin-top: 2rem;
+  background-color: #2c3e50; /* Navy gelap */
+  color: #ecf0f1; /* Abu terang */
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 2px solid #b08d57; /* Aksen emas */
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.perfume-item a:hover {
+  background: #5d6d7e; /* Biru terang */
+  color: white;
+  border-color: white;
+  transition: 0.3s ease;
+  transform: scale(1.3);
+}
+
+/* product section start*/
+
+.product {
+  position: relative;
+  background-image: linear-gradient(rgba(29, 31, 39, 0.507), rgb(29, 31, 39)),
+    url("../img/parfum2.jpeg"), url("../img/asap.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem; /* Space between cards */
+  padding: 10rem;
+  align-items: start;
+  justify-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.product-item {
+  position: relative;
+  width: 30rem 30rem;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #2c3e50; /* Deep blue-grey for luxury */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: -4rem;
+}
+
+.product-item:hover {
+  transform: translateY(-10px); /* Slight upward movement */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Product Image */
+.product-img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover image to fill space */
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.product-img:hover img {
+  transform: scale(1.1);
+}
+
+/* Product Name Overlay */
+.product-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #34495e;
+  color: var(--primary); /* Gold color for elegance */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Product Info (Initially Hidden) */
+.product-info {
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Hidden below the card */
+  width: 100%;
+  background-color: #34495e; /* Slightly lighter grey */
+  color: #ecf0f1; /* Light text color */
+  padding: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: bottom 0.4s ease, opacity 0.3s ease; /* Smooth slide-in animation */
+  opacity: 0; /* Initially invisible */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4); /* Shadow for the description */
+}
+
+/* Show Info on Hover */
+.product-item:hover .product-info {
+  bottom: 0; /* Slide up to reveal */
+  opacity: 1; /* Fully visible */
+}
+
+/* Product Description and Specs */
+.product-description {
+  font-size: 0.9rem;
+  color: #bdc3c7; /* Lighter grey for description text */
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.product-specs {
+  list-style: none;
+  padding: 0;
+}
+
+.product-specs li {
+  font-size: 0.9rem;
+  color: #ecf0f1; /* Light text for specs */
+  margin-bottom: 0.5rem;
+}
+
+.product-item a:hover {
+  background-color: #e1b12c; /* Slightly lighter gold on hover */
+  transform: scale(1.05); /* Slight zoom */
+}
+
+/* product section end */
+
+/* about us start */
+.about{
+ padding: 5rem 7% 1.4;
+ margin-top: 13rem;
+}
+
+.about h2{
+  text-align: center;
+  font-size: 5rem;
+  color: var(--accent);
+  font-weight: bolder;
+}
+
+.about h2 span{
+  color: var(--primary);
+}
+
+.about .row{
+display: flex;
+padding: 6rem;
+}
+
+.about .row .about-img{
+  
+  flex: 1 1 40rem;
+  margin-right:2rem; ;
+}
+
+.about .row .about-img img{
+  /* width: ; */
+  /* height: 100%; */
+  max-width: 80%;
+  max-height: 50%;
+  border-radius: 30px;
+}
+
+.about .content{
+  flex: 1 1 30rem;
+  margin-right: 10rem;
+}
+
+.about .content h3{
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.about .content p{
+  margin-bottom: 1rem;
+  font-weight: 100;
+  font-size: 1.3rem;
+}
+
+/* about us end */
+
+/* Media Queries */
+@media (max-width: 1366px) {
+  html {
+    font-size: 74%;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .navbar {
+    background-color: red;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--secondary);
+    width: 20rem;
+    height: 100vh;
+    transition: 0.5s;
+    text-align: center;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    font-size: 2rem;
+    margin-left: 1rem;
+    text-align: left;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  #hamburger-menu {
+    display: inline-flex;
+  }
+  .hero {
+    padding: 2rem;
+    height: auto;
+  }
+
+  .hero .banner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero .banner .banner-item img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .hero .banner .banner-item h2 {
+    font-size: 1.8rem;
+  }
+
+  .perfume-item {
+    width: 45%; /* Setiap item lebih kecil di tablet */
+  }
+
+  .product-img {
+    width: 150px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .product-info {
+    font-size: 0.2rem;
+  }
+
+  .about .row{
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+  html {
+    font-size: 62.5%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .navbar {
+    background-color: blue;
+  }
+
+  hero {
+    padding: 1rem;
+  }
+
+  .hero .banner .banner-item img {
+    width: 100%;
+  }
+
+  .hero .banner .banner-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .perfume-item {
+    width: 90%; /* Setiap item memenuhi hampir seluruh layar */
+    margin: 1rem auto;
+  }
+
+  .perfume-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .perfume-item p {
+    font-size: 0.9rem;
+  }
+
+  .perfume-item a {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .product-img img{
+    
+  }
+
+
+  .
+}
