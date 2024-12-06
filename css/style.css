@@ -18,7 +18,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: var(--accent);
-  min-height: 2000px;
+  height: 100%;
 }
 
 /* navbar */
@@ -285,11 +285,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
   gap: 5rem;
-  padding: 10rem;
+  padding: 1rem;
+  margin-bottom: 10rem;
+  margin-top: 8rem;
   align-items: start;
   justify-items: center;
   justify-content: center;
@@ -614,6 +617,88 @@ button:active {
 }
 /* contact us end */
 
+/* footer start */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 1rem;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1 1 calc(25% - 1rem);
+  min-width: 180px;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #f4a261;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85rem; /* Smaller text size */
+}
+
+.footer-col ul li a:hover {
+  color: #f4a261;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.social-links a {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #f4a261;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  border-top: 1px solid #444;
+  padding-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* footer end */
+
 /* Media Queries */
 @media (max-width: 1366px) {
   html {
@@ -624,7 +709,7 @@ button:active {
 /* Tablet */
 @media screen and (max-width: 768px) {
   .navbar {
-    background-color: red;
+    /* background-color: red; */
   }
 
   .navbar .navbar-nav {
@@ -664,6 +749,7 @@ button:active {
   }
 
   .hero {
+    margin-top: 100px;
     padding: 2rem;
     height: auto;
   }
@@ -683,7 +769,22 @@ button:active {
   }
 
   .perfume-item {
-    width: 45%;
+    width: 90%;
+    margin: 1rem auto;
+    margin-left: 1rem;
+  }
+
+  .perfume-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .perfume-item p {
+    font-size: 0.9rem;
+  }
+
+  .perfume-item a {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 
   .product-img {
@@ -695,6 +796,20 @@ button:active {
 
   .product-info {
     font-size: 0.2rem;
+  }
+
+  .best-sellers {
+    padding: 0;
+    padding-bottom: 4rem;
+  }
+  .best-sellers .perfume-list .perfume-item {
+    width: 150px;
+    height: 300px;
+    padding-bottom: 4rem;
+  }
+
+  .best-sellers .perfume-list .perfume-item a {
+    font-size: 60%;
   }
 
   .about .row {
@@ -714,7 +829,7 @@ button:active {
   }
 
   .navbar {
-    background-color: blue;
+    /* background-color: blue; */
   }
 
   .hero {
